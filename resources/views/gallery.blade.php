@@ -9,11 +9,11 @@
 <body class="font-sans antialiased dark:bg-black dark:text-white/50">
 <header>
         <div class="header-container">
-            <h1>Jet's Gaming Hub</h1>
+        <h1>{{ $username ?? 'Guest' }}'s Gaming Hub</h1>
             <nav>
-                <a href="{{ url('/') }}">Homepage</a>
-                <a href="{{ url('resources/views/gallery') }}">Gallery</a>
-                <a href="{{ url('resources/views/review') }}">Reviews</a>
+                <a href="{{ url('resources/views/welcome') }}?username={{ $username }}">Homepage</a>
+                <a href="{{ url('resources/views/gallery') }}?username={{ $username }}">Gallery</a>
+                <a href="{{ url('resources/views/review') }}?username={{ $username }}">Reviews</a>
             </nav>
         </div>
     </header>

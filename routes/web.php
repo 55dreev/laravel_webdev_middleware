@@ -6,12 +6,19 @@ Route::get('/', function () {
     return view('landingpage');
 });
 
+Route::get('resources/views/welcome', function () {
+    $username = request('username');
+    return view('welcome', ['username' => $username]);
+});
+
 Route::get('resources/views/gallery', function () {
-    return view('gallery');
+    $username = request('username');
+    return view('gallery', ['username' => $username]);
 });
 
 Route::get('resources/views/review', function () {
-    return view('review');
+    $username = request('username');
+    return view('review', ['username' => $username]);
 });
 
 Route::get('/user', function () {
@@ -24,4 +31,5 @@ Route::get('/user', function () {
 
     return view('welcome', ['username' => $username]);
 });
+
 
