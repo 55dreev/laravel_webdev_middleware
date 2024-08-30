@@ -63,7 +63,7 @@ main {
 }
 
 .main-content {
-  margin-top: 2rem; /* Adjust this value as needed */
+  margin-top: 2rem; 
   margin-bottom: 2rem;
 }
 
@@ -156,3 +156,86 @@ footer {
   flex-direction: column;
   align-items: center;
 }
+
+/* Form Container */
+.form-container {
+    background-color: rgba(0, 0, 0, 0.5); 
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    display: inline-block;
+    max-width: 450px;
+    width: 100%;
+    position: relative;
+    margin-bottom: 10px;
+}
+
+/* Form Actions */
+.form-actions {
+  display: flex;
+  justify-content: flex-end; /* Aligns button to the right */
+  margin-top: 1rem;
+}
+
+/* Form Group */
+.form-group {
+    margin-bottom: 20px;
+}
+
+/* Form Label */
+.form-label {
+    display: block;
+    font-size: 18px;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+/* Form Input */
+.form-input {
+    width: 100%;
+    height: 30px;
+    padding: 5px;
+    border: 1px solid #ffffff;
+    border-radius: 10px;
+    background-color: #333333;
+    color: #ffffff;
+    font-size: 15px;
+}
+
+/* Form Button */
+.form-button {
+    background-color: #FF2D20;
+    color: #ffffff;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    display: inline-block;
+}
+
+.form-button:hover {
+    background-color: #35255e;
+    color: #ffffff;
+}
+
+/* Link Container */
+.link-container {
+  display: flex;
+  justify-content: flex-end; /* Aligns link to the right */
+}
+
+/* Continue as Guest Link */
+.continue-guest-link {
+  color: #1d4ed8; /* Tailwind blue-500 */
+  text-decoration: none; /* Removes default underline */
+  font-size: 16px; /* Ensures consistent font size */
+  font-weight: 500; /* Makes text slightly bolder */
+  transition: color 0.3s, text-decoration 0.3s; /* Smooth transition for hover effect */
+}
+
+.continue-guest-link:hover {
+  color: #2563eb; /* Tailwind blue-600 */
+  text-decoration: underline; /* Adds underline on hover */
+}
+

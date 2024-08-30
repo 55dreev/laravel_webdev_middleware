@@ -12,8 +12,8 @@
             <h1>Jet's Gaming Hub</h1>
             <nav>
                 <a href="{{ url('/') }}">Homepage</a>
-                <a href="{{ url('resources/views/gallery.blade.php') }}">Gallery</a>
-                <a href="{{ url('resources/views/review.blade.php') }}">Reviews</a>
+                <a href="{{ url('resources/views/gallery') }}">Gallery</a>
+                <a href="{{ url('resources/views/review') }}">Reviews</a>
             </nav>
         </div>
     </header>
