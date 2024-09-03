@@ -28,6 +28,12 @@
             <br><br>
             <button type="submit">Submit</button>
         </form>
+
+        <br>or<br>
+        
+        <div class="link-container">
+            <a href="{{ url('/user') }}" class="continue-guest-link">Continue as Guest</a>
+        </div>
     </main>
 
 </body>

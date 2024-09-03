@@ -157,3 +157,23 @@ footer {
   flex-direction: column;
   align-items: center;
 }
+
+/* Link Style*/
+.link-container {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.continue-guest-link {
+  color: #35255e; 
+  text-decoration: none; 
+  font-size: 16px; 
+  font-weight: 500; 
+  transition: color 0.3s, text-decoration 0.3s; 
+}
+
+.continue-guest-link:hover {
+  color: black; 
+  text-decoration: underline;
+}
