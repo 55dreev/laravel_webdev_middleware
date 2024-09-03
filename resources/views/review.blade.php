@@ -14,6 +14,7 @@
                 <a href="{{ url('/') }}">Homepage</a>
                 <a href="{{ url('resources/views/gallery.blade.php') }}">Gallery</a>
                 <a href="{{ url('resources/views/review.blade.php') }}">Reviews</a>
+                <a href="{{ url('resources/views/contact.blade.php') }}">Contact</a>
             </nav>
         </div>
     </header>

@@ -14,6 +14,10 @@ Route::get('resources/views/review.blade.php', function () {
     return view('review');
 });
 
+Route::get('resources/views/contact.blade.php', function () {
+    return view('contact');
+});
+
 Route::get('/user', function () {
     $username = request()->input('username', 'Guest');
     
