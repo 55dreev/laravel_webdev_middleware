@@ -18,7 +18,7 @@
         </div>
     </header>
 
-    <main class="main-content">
+    <main>
         <h1>Welcome, {{ $username }}</h1>
         <p>Enjoy exploring the gaming hub, {{ $username }}!</p>
         <button class="button" onclick="location.href='{{ url('resources/views/gallery.blade.php') }}'">Explore Gallery</button>

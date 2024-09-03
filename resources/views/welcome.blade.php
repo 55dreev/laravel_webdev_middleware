@@ -18,7 +18,7 @@
         </div>
     </header>
 
-    <main class="main-content">
+    <main>
         <h1>Welcome to Jet's Gaming Hub</h1>
         <p>Discover the latest and greatest in gaming!</p>
         <form action="{{ url('/user') }}" method="GET">
