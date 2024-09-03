@@ -63,7 +63,7 @@ main {
 }
 
 .main-content {
-  margin-top: 2rem; /* Adjust this value as needed */
+  margin-top: 2rem; 
   margin-bottom: 2rem;
 }
 
@@ -71,8 +71,8 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 70vh; /* Increased from 100vh to 120vh for extra height */
-  padding: 2rem; /* Adds extra space within the container */
+  min-height: 70vh; 
+  padding: 2rem; 
 }
 
 /* Button Styles */

@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gallery of Games</title>
+    <title>Welcome User</title>
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body class="homepage">
@@ -19,15 +19,9 @@
     </header>
 
     <main class="main-content">
-        <h1>Welcome to Jet's Gaming Hub</h1>
-        <p>Discover the latest and greatest in gaming!</p>
-        <form action="{{ url('/user') }}" method="GET">
-            <label for="username">Enter your username:</label>
-            <input type="text" name="username" id="username" pattern="[A-Za-z]+" title="Only alphabetic characters are allowed">
-            <br><br>
-            <button type="submit">Submit</button>
-        </form>
+        <h1>Welcome, {{ $username }}</h1>
+        <p>Enjoy exploring the gaming hub, {{ $username }}!</p>
+        <button class="button" onclick="location.href='{{ url('resources/views/gallery.blade.php') }}'">Explore Gallery</button>
     </main>
-
 </body>
 </html>
