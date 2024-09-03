@@ -21,6 +21,11 @@ Route::get('resources/views/review', function () {
     return view('review', ['username' => $username]);
 });
 
+Route::get('resources/views/contact', function () {
+    $username = request('username');
+    return view('contact', ['username' => $username]);
+});
+
 Route::get('/user', function () {
     $username = request('username');
 

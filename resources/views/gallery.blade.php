@@ -14,6 +14,7 @@
                 <a href="{{ url('resources/views/welcome') }}?username={{ $username }}">Homepage</a>
                 <a href="{{ url('resources/views/gallery') }}?username={{ $username }}">Gallery</a>
                 <a href="{{ url('resources/views/review') }}?username={{ $username }}">Reviews</a>
+                <a href="{{ url('resources/views/contact') }}?username={{ $username }}">Contact Us</a>
             </nav>
         </div>
     </header>
