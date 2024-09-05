@@ -32,9 +32,8 @@
         <br>or<br>
         
         <div class="link-container">
-            <a href="{{ url('/user') }}" class="continue-guest-link">Continue as Guest</a>
+            <a href="{{ url('/user') }}" class="button-link">Continue as Guest</a>
         </div>
     </main>
-
 </body>
 </html>
