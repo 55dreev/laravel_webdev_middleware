@@ -1,6 +1,8 @@
 @extends('Components.Layout')
 
-@section('title', 'Contact Us')
+@php
+    $title = 'Contact Us';
+@endphp
 
 @push('styles')
     <link href="{{ asset('css/contact.css') }}" rel="stylesheet">
