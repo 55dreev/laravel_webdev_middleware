@@ -1,76 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
 
-body {
-    background-image: url('/img/bg.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    color: rgb(255, 255, 255);
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    min-height: 100vh;
-    margin: 0;
-
-}
-
 body.contact {
-    overflow: hidden;
+    overflow-x: hidden;
     height: 100vh;
-}
-
-header {
-    background-color: #544184;
-    padding: 5px 50px;
-    border-bottom: 1px solid #584184;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    box-sizing: border-box;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
-
-.header-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-nav a {
-    text-decoration: none;
-    color: #fff;
-    margin-left: 20px;
-    font-size: 14px;
-}
-
-nav a:hover {
-    text-decoration: underline;
-}
-
-main {
-    padding-top: 5rem;
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    text-align: center;
-    flex: 1;
-}
-
-.main-content {
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-}
-
-.min-h-screen {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 70vh;
-    padding: 2rem;
 }
 
 .form-container {

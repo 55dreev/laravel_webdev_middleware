@@ -1,25 +1,11 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gallery of Games</title>
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-</head>
-<body>
-    <header>
-        <div class="header-container">
-            <h1>Jet's Gaming Hub</h1>
-            <nav>
-                <a href="{{ url('/') }}">Homepage</a>
-                <a href="{{ url('resources/views/gallery.blade.php') }}">Gallery</a>
-                <a href="{{ url('resources/views/review.blade.php') }}">Reviews</a>
-                <a href="{{ url('resources/views/contact.blade.php') }}">Contact</a>
-            </nav>
-        </div>
-    </header>
+@extends('Components.Layout')
 
-    <main class="main-content">
+@php
+    $title = 'Game Reviews';
+@endphp
+
+@section('content')
+    @section('main-class', 'main-content')
         <div >
             <div>
                 <h1>Game Reviews</h1>
@@ -85,11 +71,4 @@
             </div>
         </div>
     </main>
-
-    <footer>
-        <div class="footer-container">
-            <p>&copy; 2024 Jet's Gaming Hub. All rights reserved.</p>
-        </div>
-    </footer>
-</body>
-</html>
+@endsection

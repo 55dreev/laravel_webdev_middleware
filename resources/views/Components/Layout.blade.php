@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,20 +9,21 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     @stack('styles')
 </head>
+
 <body class="@yield('body-class')">
     <header>
         <div class="header-container">
             <h1>Jet's Gaming Hub</h1>
             <nav>
                 <a href="{{ url('/') }}">Homepage</a>
-                <a href="{{ url('resources/views/gallery.blade.php') }}">Gallery</a>
-                <a href="{{ url('resources/views/review.blade.php') }}">Reviews</a>
-                <a href="{{ url('resources/views/contact.blade.php') }}">Contact</a>
+                <a href="{{ url('/gallery') }}">Gallery</a>
+                <a href="{{ url('/review') }}">Reviews</a>
+                <a href="{{ url('/contact') }}">Contact</a>
             </nav>
         </div>
     </header>
 
-    <main>
+    <main class="@yield('main-class')">
         @yield('content')
     </main>
 

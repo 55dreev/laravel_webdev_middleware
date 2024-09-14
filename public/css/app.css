@@ -16,7 +16,7 @@ body {
 }
 
 body.homepage {
-  overflow: hidden; 
+  overflow: hidden;
   height: 100vh;
   margin-top: 11rem;
 }
@@ -45,13 +45,12 @@ nav a {
   text-decoration: none;
   color: #fff;
   margin-left: 20px;
-  font-size: 14px; 
+  font-size: 14px;
 }
 
 nav a:hover {
   text-decoration: underline;
 }
-
 
 /* Main Content Styles */
 main {
@@ -64,7 +63,7 @@ main {
 }
 
 .main-content {
-  margin-top: 2rem; 
+  margin-top: 2rem;
   margin-bottom: 2rem;
 }
 
@@ -72,8 +71,8 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 70vh; 
-  padding: 2rem; 
+  min-height: 70vh;
+  padding: 2rem;
 }
 
 /* Button Styles */
