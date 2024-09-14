@@ -1,6 +1,8 @@
 @extends('Components.Layout')
 
-@section('title', 'Welcome User')
+@php
+    $title = 'Welcome User';
+@endphp
 
 @section('body-class', 'homepage')
 
