@@ -11,28 +11,34 @@
 </head>
 
 <body class="@yield('body-class')">
-    <header>
-        <div class="header-container">
-            <h1>Jet's Gaming Hub</h1>
-            <nav>
-                <a href="{{ url('/') }}">Homepage</a>
-                <a href="{{ url('/gallery') }}">Gallery</a>
-                <a href="{{ url('/review') }}">Reviews</a>
-                <a href="{{ url('/contact') }}">Contact</a>
-            </nav>
-        </div>
-    </header>
+<header>
+    <div class="header-container">
+        <h1>Jet's Gaming Hub</h1>
+        <nav>
+            @if(session('username') && session('username') !== 'Guest')
+                <span>Welcome, {{ session('username') }}</span>
+                <a href="{{ url('/logout') }}">Logout</a>
+            @elseif(!request()->is('/'))
+                <span>Welcome, Guest</span>
+            @endif
+            <a href="{{ url('/') }}">Homepage</a>
+            <a href="{{ url('/gallery') }}">Gallery</a>
+            <a href="{{ url('/review') }}">Reviews</a>
+            <a href="{{ url('/contact') }}">Contact</a>
+        </nav>
+    </div>
+</header>
 
-    <main class="@yield('main-class')">
-        @yield('content')
-    </main>
+<main class="@yield('main-class')">
+    @yield('content')
+</main>
 
-    <footer>
-        <div class="footer-container">
-            <p>&copy; 2024 Jet's Gaming Hub. All rights reserved.</p>
-        </div>
-    </footer>
+<footer>
+    <div class="footer-container">
+        <p>&copy; 2024 Jet's Gaming Hub. All rights reserved.</p>
+    </div>
+</footer>
 
-    @stack('scripts')
+@stack('scripts')
 </body>
 </html>
