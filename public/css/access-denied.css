@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+/* Body background */
+body {
+    background-image: url('/img/bg.jpg'); /* Set your background image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    overflow: hidden;
+    margin: 0; /* Ensure no margin on the body */
+}
+
+.blur-background {
+    position: fixed; /* Fix position to cover the whole viewport */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(10px); /* Adjust the blur amount here */
+    z-index: -1; /* Send it to the back */
+}
+
+/* Center container styling */
+.center-container {
+    margin: 100px auto;
+    height: auto; /* Change to auto for better responsiveness */
+    width: 300px;
+    text-align: center;
+    padding: 50px;
+    background: rgba(233, 231, 231, 0.9); /* Slightly transparent background */
+    border-radius: 15px;
+}
+
+/* Title styling */
+.center-container h1 {
+    margin-top: 20px;
+    color: #e22b2e; /* Violet color */
+    font-size: 20px;
+    font-weight: bold; /* Bold font for emphasis */
+}
+
+/* Paragraph styling */
+.center-container p {
+    color: #171717;
+    font-size: 15px;
+    margin-top: 10px; /* Add some space above the paragraph */
+}
+
+/* SVG styling */
+.circle-x-icon {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 10px; /* Add space below the SVG */
+}
+
+.outer-circle {
+    stroke: #e22b2e; /* Violet color */
+    stroke-width: 4;
+    fill: none;
+}
+
+.cross-line {
+    stroke: #e22b2e; /* Violet color */
+    stroke-width: 6;
+}

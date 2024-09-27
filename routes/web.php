@@ -31,6 +31,10 @@ Route::get('/contact', function () {
     return view('contact');
 });
 
+Route::get('/access-denied', function () {
+    return view('access-denied');
+});
+
 // Route to handle user login or continue as guest
 Route::get('/user', function () {
     // Get the username from the request or default to 'Guest'
