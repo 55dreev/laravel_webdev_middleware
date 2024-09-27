@@ -12,7 +12,7 @@
 
 @section('main-class', 'main-content')
 
-@section()
+@section('content')
     <div class="blur-background"></div>
 
     <div class="center-container">
