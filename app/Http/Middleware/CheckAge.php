@@ -3,21 +3,18 @@
 namespace App\Http\Middleware;
 
 use Closure;
-use Illuminate\Http\Request;
-use Symfony\Component\HttpFoundation\Response;
+use Illuminate\Support\Facades\Session;
 
 class CheckAge
 {
-    /**
-     * Handle an incoming request.
-     *
-     * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
-     */
-    public function handle(Request $request, Closure $next): Response
+    public function handle($request, Closure $next)
     {
-        // Check if the 'age' parameter is provided in the request & if less than 18
-        if ($request->age && $request->age < 18) {
-            return redirect('access-denied');
+        $age = Session::get('age');
+
+        // Check if the age is present and below 18
+        if ($age && $age < 18) {
+            // Redirect to the access-denied page if age is below 18
+            return redirect('/access-denied');
         }
 
         return $next($request);
