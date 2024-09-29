@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Session;
 
+
 // Route to display the login page
 Route::get('/', function () {
     if (Session::has('username') && Session::get('username') !== 'Guest') {
@@ -77,3 +78,19 @@ Route::get('/logout', function () {
     // Redirect to the homepage or login page
     return redirect('/');
 });
+
+Route::middleware(['check.age'])->group(function () {
+    Route::get('/welcome', function () {
+        return view('welcome');
+    });
+
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    });
+});
+
+
+Route::get('/access-denied', function () {
+    return view('access-denied'); // Ensure this view exists
+});
+
