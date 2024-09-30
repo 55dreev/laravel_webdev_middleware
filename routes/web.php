@@ -111,7 +111,11 @@ Route::get('/access-denied', function () {
     // Attempt to log the access denied details in log.txt file
     file_put_contents(storage_path('logs/log.txt'), $logData, FILE_APPEND);
 
-    return view('access-denied'); // Ensure this view exists
+    // Clear the username and age from the session
+    Session::forget('username');
+    Session::forget('age');
+
+    return view('access-denied'); 
 });
 
 // Route to handle "Continue as Guest" link
