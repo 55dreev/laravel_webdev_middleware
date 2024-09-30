@@ -64,3 +64,7 @@ body {
     stroke: #e22b2e; /* Violet color */
     stroke-width: 6;
 }
+
+footer {
+    margin-top: 50px;
+}

@@ -18,7 +18,7 @@
 
             <div class="link-container">
                 <p>Don't have an account?</p>
-                <a href="{{ url('/register') }}" class="button-link">Register here</a>
+                <a href="{{ url('/') }}" class="button-link">Register here</a>
             </div>
         </div>
 
@@ -51,7 +51,7 @@
 
                 <div class="link-container">
                     <p>or</p>
-                    <a href="{{ url('/user') }}" class="button-link">Continue as Guest</a>
+                    <a href="{{ url('/guest') }}" class="button-link">Continue as Guest</a>
                 </div>
             </form>
         </div>

@@ -9,12 +9,12 @@ Route::get('/', function () {
     if (Session::has('username') && Session::get('username') !== 'Guest') {
         return redirect('/user');
     }
-    return view('login');
+    return view('register');
 });
 
 // Route to display the registration page
-Route::get('/register', function () {
-    return view('register');
+Route::get('/login', function () {
+    return view('login');
 });
 
 // Route to display the gallery page
@@ -64,40 +64,9 @@ Route::post('/user', function () {
     Session::put('username', $username);
     Session::put('age', $age);  // Store age in session
 
-    // If age is less than 18, log the access denied and redirect
-    if ($age < 18) {
-        // Log access denied with the username only once
-        $logData = sprintf(
-            "[%s] Access Denied - Username: %s\n",
-            now()->toDateTimeString(),
-            $username
-        );
-
-        // Log access denied details in log.txt file
-        if (file_put_contents(storage_path('logs/log.txt'), $logData, FILE_APPEND) === false) {
-            \Log::error('Failed to write to log.txt');
-        }
-
-        return redirect('/access-denied');
-    }
-
-    // Log successful username after validation
-    $logData = sprintf(
-        "[%s] Access Granted - Username: %s\n",
-        now()->toDateTimeString(),
-        $username // Log the username for successful access
-    );
-
-    // Attempt to log the user request details in log.txt file
-    if (file_put_contents(storage_path('logs/log.txt'), $logData, FILE_APPEND) === false) {
-        \Log::error('Failed to write to log.txt');
-    }
-
-    // Return the user view with the username and age
-    return view('user', ['username' => $username, 'age' => $age]);
+    // Redirect after login or registration
+    return redirect('/user');
 });
-
-
 
 // Route to handle user logout
 Route::get('/logout', function () {
@@ -117,6 +86,14 @@ Route::middleware([CheckAge::class])->group(function () {
     Route::get('/dashboard', function () {
         return view('dashboard');
     });
+
+    Route::get('/user', function () {
+        // Get the username from the request or session
+        $username = Session::get('username', 'Guest');
+
+        // Display the user view with the username
+        return view('user', ['username' => $username, 'age' => Session::get('age')]);
+    });
 });
 
 // Route to handle when access is denied
@@ -134,5 +111,18 @@ Route::get('/access-denied', function () {
     // Attempt to log the access denied details in log.txt file
     file_put_contents(storage_path('logs/log.txt'), $logData, FILE_APPEND);
 
-    return view('access-denied'); // Ensure this view exists
+    // Clear the username and age from the session
+    Session::forget('username');
+    Session::forget('age');
+
+    return view('access-denied'); 
+});
+
+// Route to handle "Continue as Guest" link
+Route::get('/guest', function () {
+    // Store 'Guest' in session
+    Session::put('username', 'Guest');
+
+    // Redirect to user page
+    return redirect('/user');
 });

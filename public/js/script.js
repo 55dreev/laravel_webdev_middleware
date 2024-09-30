@@ -11,3 +11,15 @@ function togglePassword() {
         confirmPassword.type = "password";
     }
 }
+
+document.querySelector('form').addEventListener('submit', function(e) {
+    const password = document.getElementById('password').value;
+    const confirmPassword = document.getElementById('confirmPassword').value;
+
+    if (password !== confirmPassword) {
+        e.preventDefault(); // Prevent the form from submitting
+        document.getElementById('password-error').classList.add('show'); // Show the error message
+    } else {
+        document.getElementById('password-error').classList.remove('show'); // Hide the error message
+    }
+});
