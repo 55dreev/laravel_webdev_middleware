@@ -18,7 +18,7 @@
             @if(session('username') && session('username') !== 'Guest')
                 <span>Welcome, {{ session('username') }}</span>
                 <a href="{{ url('/logout') }}">Logout</a>
-            @elseif(!request()->is('/'))
+            @elseif(session('username') === 'Guest')
                 <span>Welcome, Guest</span>
             @endif
             <a href="{{ url('/') }}">Homepage</a>

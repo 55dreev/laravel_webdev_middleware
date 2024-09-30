@@ -16,7 +16,7 @@ main.register {
     align-items: center;
     padding: 10px;
     box-sizing: border-box;
-    margin-top: 120px;
+    margin-top: 100px;
     margin-bottom: 100px;
 }
 
@@ -76,7 +76,7 @@ main.register {
     flex: 1;
     max-height: 100%;
     max-width: 100%;
-    padding: 20px;
+    padding: 10px;
     background: linear-gradient(135deg, #ffffff, #f4f4f9);
     box-sizing: border-box;
 }
@@ -87,7 +87,7 @@ main.register {
     height: 100%;
     max-height: 100%;
     max-width: 100%;
-    padding: 122px 20px;
+    padding: 139px 20px;
     background: linear-gradient(135deg, #6c56a1, #35255e);
     box-sizing: border-box;
 }
@@ -102,7 +102,7 @@ form {
 
 form h1 {
     margin-top: 0px;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
 }
 
 form svg {
@@ -183,11 +183,25 @@ form button:hover {
     text-align: right;
     justify-content: flex-end;
     font-size: 12px;
+    margin-top: -10px;
 }
 
 input[type='checkbox'] {
-    accent-color: #b39ddb; /* Changes the checkbox color for modern browsers */
-    width: 13px; /* Controls the size */
+    accent-color: #b39ddb; 
+    width: 13px; 
     height: 13px;
     border: 1px solid #b39ddb;
+}
+
+#password-error {
+    color: red;
+    visibility: hidden; /* Keep the element visible, but hide the text */
+    font-size: 12px;
+    text-align: right;
+    margin-top: -10px;
+    height: 12px; 
+}
+
+#password-error.show {
+    visibility: visible; /* Show the text when needed */
 }
