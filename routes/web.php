@@ -45,9 +45,14 @@ Route::get('/user', function () {
     // Store the username in session
     Session::put('username', $username);
 
-    // Return the user view with the username
-    return view('user', ['username' => $username]);
+    // Retrieve age and verification status
+    $age = Session::get('age');
+    $verificationStatus = Session::get('verificationStatus', 'Not Verified');
+
+    // Return the user view with the username and verification status
+    return view('user', ['username' => $username, 'age' => $age, 'verificationStatus' => $verificationStatus]);
 });
+
 
 // Route to handle user login or registration submission
 Route::post('/user', function () {
@@ -72,10 +77,13 @@ Route::post('/user', function () {
 Route::get('/logout', function () {
     // Clear the username from session
     Session::forget('username');
+    Session::forget('age'); // Clear age from session
+    Session::forget('verificationStatus'); // Clear verification status
 
     // Redirect to the homepage or login page
     return redirect('/');
 });
+
 
 // Group routes that require age validation
 Route::middleware([CheckAge::class])->group(function () {
@@ -88,11 +96,15 @@ Route::middleware([CheckAge::class])->group(function () {
     });
 
     Route::get('/user', function () {
-        // Get the username from the request or session
+        // Get the username from the session
         $username = Session::get('username', 'Guest');
-
-        // Display the user view with the username
-        return view('user', ['username' => $username, 'age' => Session::get('age')]);
+    
+        // Retrieve age and verification status
+        $age = Session::get('age');
+        $verificationStatus = Session::get('verificationStatus', 'Not Verified'); // Default value if not set
+    
+        // Return the user view with the username and verification status
+        return view('user', ['username' => $username, 'age' => $age, 'verificationStatus' => $verificationStatus]);
     });
 });
 

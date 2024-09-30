@@ -8,15 +8,20 @@ use Illuminate\Support\Facades\Session;
 class CheckAge
 {
     public function handle($request, Closure $next)
-    {
-        $age = Session::get('age');
+{
+    // Retrieve the age from the session
+    $age = Session::get('age');
 
-        // Check if the age is present and below 18
-        if ($age && $age < 18) {
-            // Redirect to the access-denied page if age is below 18
-            return redirect('/access-denied');
-        }
-
-        return $next($request);
+    // Check the age and set the verification status
+    if ($age < 18) {
+        return redirect('/access-denied');
+    } elseif ($age >= 21) {
+        Session::put('verificationStatus', 'Verified');
+    } else {
+        Session::put('verificationStatus', 'Unverified');
     }
+
+    return $next($request);
+}
+
 }
