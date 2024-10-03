@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Session;
 use App\Http\Middleware\CheckAge; // Import CheckAge middleware
+use App\Http\Middleware\LogRequests; // Import LogRequests middleware
 
 // Route to display the login page
 Route::get('/', function () {
@@ -53,7 +54,6 @@ Route::get('/user', function () {
     return view('user', ['username' => $username, 'age' => $age, 'verificationStatus' => $verificationStatus]);
 });
 
-
 // Route to handle user login or registration submission
 Route::post('/user', function () {
     // Get the username and age from the request
@@ -68,6 +68,10 @@ Route::post('/user', function () {
     // Store the username and age in the session
     Session::put('username', $username);
     Session::put('age', $age);  // Store age in session
+
+    // Set verification status based on age
+    $verificationStatus = ($age >= 21) ? 'Verified' : 'Not Verified';
+    Session::put('verificationStatus', $verificationStatus); // Store verification status in session
 
     // Redirect after login or registration
     return redirect('/user');
@@ -84,9 +88,8 @@ Route::get('/logout', function () {
     return redirect('/');
 });
 
-
-// Group routes that require age validation
-Route::middleware([CheckAge::class])->group(function () {
+// Group routes that require age validation and logging
+Route::middleware([LogRequests::class, CheckAge::class])->group(function () {
     Route::get('/welcome', function () {
         return view('welcome');
     });
